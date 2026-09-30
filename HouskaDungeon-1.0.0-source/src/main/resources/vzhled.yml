@@ -1,0 +1,300 @@
+# ============================================================
+# HouskaDungeon - VZHLED V3
+# Paper 1.21.11
+# ============================================================
+# Klasicke barvy: &a &c &5 atd.
+# RGB system nize pouziva HEX barvy: "#RRGGBB"
+# ============================================================
+
+start:
+  message: "&5&lDUNGEON &8» &fVstoupil jsi do &d%arena%&f."
+  occupied-message: "&8Dungeon je nyní &cOBSAZENÝ&8."
+  countdown:
+    title: "&5&l%seconds%"
+    subtitle: "&dDungeon se připravuje..."
+    sound:
+      enabled: true
+      type: "BLOCK_NOTE_BLOCK_PLING"
+      volume: 1.0
+      pitch: 1.0
+    particles:
+      enabled: true
+      type: "PORTAL"
+      amount: 80
+
+dungeon-start:
+  title: "&5&lDUNGEON"
+  subtitle: "&fZačíná první vlna!"
+  sound:
+    enabled: true
+    type: "ENTITY_ENDER_DRAGON_GROWL"
+    volume: 0.5
+    pitch: 1.6
+
+# ============================================================
+# WAVE FULLSCREEN RGB
+# ============================================================
+wave:
+  title: "⚔ WAVE %wave% ⚔"
+  subtitle-1: "&7První nepřátelé přicházejí..."
+  subtitle-2: "&bPřitvrzujeme. Připrav se..."
+  subtitle-3: "&6Teď začíná jít do tuhého..."
+  subtitle-4: "&c&lPOSLEDNÍ VLNA!"
+
+  rgb:
+    enabled: true
+    speed-ticks: 2
+    frames: 24
+
+  # Každá wave má vlastní pohybující se HEX colorway.
+  colorways:
+    1:
+      - "#063B20"
+      - "#075C2D"
+      - "#0B7A3E"
+      - "#12A150"
+      - "#22C965"
+      - "#52E58B"
+      - "#8CFFB1"
+      - "#B8FFD0"
+      - "#8CFFB1"
+      - "#52E58B"
+      - "#22C965"
+
+    2:
+      - "#002A4A"
+      - "#003B66"
+      - "#005C99"
+      - "#007ACC"
+      - "#00A3FF"
+      - "#32C5FF"
+      - "#74DDFF"
+      - "#B5F2FF"
+      - "#74DDFF"
+      - "#32C5FF"
+
+    3:
+      - "#6B2300"
+      - "#8A2E00"
+      - "#C94A00"
+      - "#FF6A00"
+      - "#FF9500"
+      - "#FFB800"
+      - "#FFD84A"
+      - "#FFF09A"
+      - "#FFD84A"
+      - "#FF9500"
+
+    4:
+      - "#4A0016"
+      - "#61001D"
+      - "#92002D"
+      - "#C4003D"
+      - "#FF174F"
+      - "#FF3975"
+      - "#FF65A0"
+      - "#FF9BC3"
+      - "#FF65A0"
+      - "#FF3975"
+
+  complete:
+    title: "&a&l✔ WAVE %wave% SPLNĚNA"
+    subtitle: "&7Další vlna se připravuje..."
+
+  sound:
+    enabled: true
+    type: "ENTITY_WITHER_SPAWN"
+    volume: 0.55
+    pitch: 1.8
+  particles:
+    enabled: true
+    type: "REVERSE_PORTAL"
+    amount: 180
+
+# ============================================================
+# WAVE HOTBAR / BOSSBAR RGB
+# ============================================================
+wavebar:
+  enabled: true
+  title: "⚔ WAVE %wave% • %remaining%/%total% ZBÝVÁ"
+  last-five-glow: true
+  rgb:
+    enabled: true
+    speed-ticks: 3
+
+mob-spawn:
+  particles:
+    enabled: true
+    primary:
+      type: "REVERSE_PORTAL"
+      amount: 45
+    secondary:
+      type: "SOUL_FIRE_FLAME"
+      amount: 18
+  sound:
+    enabled: true
+    type: "ENTITY_ENDERMAN_TELEPORT"
+    volume: 0.45
+    pitch: 1.55
+
+mob-death:
+  particles:
+    enabled: true
+    primary:
+      type: "POOF"
+      amount: 35
+    secondary:
+      type: "SOUL"
+      amount: 12
+    critical:
+      type: "CRIT"
+      amount: 18
+  sound:
+    enabled: true
+    type: "ENTITY_PLAYER_ATTACK_CRIT"
+    volume: 0.75
+    pitch: 1.25
+
+reward:
+  # Pokud je money-per-kill 0 nebo chybi, Java actionbar vubec neukaze.
+  money-actionbar: "&a+$%money% &8• &fWave %wave%"
+  wave-complete-message: "&aZískal jsi odměnu za dokončení Wave %wave%!"
+
+# ============================================================
+# BOSS RGB
+# ============================================================
+boss:
+  title: "&5&l☠ BOSS ☠"
+  subtitle: "&dStrážce dungeonu se objevil!"
+  name: "&5&l☠ DUNGEON BOSS ☠"
+
+  rgb:
+    enabled: true
+    colors:
+      - "#26004D"
+      - "#420078"
+      - "#6500A8"
+      - "#8B00E8"
+      - "#B52BFF"
+      - "#D66BFF"
+      - "#F0B0FF"
+      - "#D66BFF"
+      - "#B52BFF"
+
+  bossbar:
+    enabled: true
+    title: "☠ BOSS • %health%/%max_health% HP"
+
+  spawn:
+    sound:
+      enabled: true
+      type: "ENTITY_WITHER_SPAWN"
+      volume: 1.0
+      pitch: 0.7
+    particles:
+      enabled: true
+      type: "SOUL_FIRE_FLAME"
+      amount: 100
+
+complete:
+  title: "&a&l✔ DUNGEON VYČIŠTĚN!"
+  subtitle: "&fBoss byl poražen!"
+  message: "&5&lDungeon &8» &aÚspěšně jsi dokončil dungeon &d%arena%&a!"
+  sound:
+    enabled: true
+    primary:
+      type: "UI_TOAST_CHALLENGE_COMPLETE"
+      volume: 1.0
+      pitch: 0.65
+    secondary:
+      type: "ENTITY_ENDER_DRAGON_DEATH"
+      volume: 0.65
+      pitch: 1.25
+  particles:
+    explosion:
+      enabled: true
+      type: "EXPLOSION_EMITTER"
+      amount: 3
+    portal:
+      enabled: true
+      type: "REVERSE_PORTAL"
+      amount: 220
+    totem:
+      enabled: true
+      type: "TOTEM_OF_UNDYING"
+      amount: 180
+    firework:
+      enabled: true
+      type: "FIREWORK"
+      amount: 160
+
+teleport:
+  countdown-actionbar: "&5Teleportace za &d%seconds%&5..."
+  title: "&5&lTELEPORT!"
+  subtitle: "&fDungeon byl dokončen."
+  sound:
+    enabled: true
+    type: "ENTITY_ENDERMAN_TELEPORT"
+    volume: 1.0
+    pitch: 1.0
+
+leave:
+  message: "&5&lDungeon &8» &fOpustil jsi dungeon &d%arena%&f."
+  title: "&c&lDUNGEON OPUŠTĚN"
+  subtitle: "&7Na arénu byl nastaven cooldown."
+  sound:
+    enabled: true
+    type: "ENTITY_ENDERMAN_TELEPORT"
+    volume: 1.0
+    pitch: 0.8
+
+death:
+  message: "&5&lDungeon &8» &cZemřel jsi. Dungeon byl ukončen."
+  title: "&4&l☠ ZEMŘEL JSI"
+  subtitle: "&7Dungeon byl ukončen."
+
+cooldown:
+  message: "&5&lDungeon &8» &cNa tuto arénu máš cooldown ještě &d%time%&c."
+
+occupied:
+  message: "&5&lDungeon &8» &cTato aréna je právě obsazená hráčem &d%player%&c."
+
+disabled:
+  actionbar: "&7Dungeon &d%arena% &7je momentálně &cVYPNUTÝ"
+
+error:
+  incomplete: "&5&lDungeon &8» &cTento dungeon není kompletně nastavený."
+  no-spawn: "&5&lDungeon &8» &cDungeon nemá nastavený spawn."
+  spawn-failed: "&5&lDungeon &8» &cNepodařilo se najít bezpečné místo pro spawn."
+
+# ============================================================
+# SPAWNDINFO - LIVE DUNGEON PANEL
+# ============================================================
+# Panel automaticky ukazuje:
+# - arena + status
+# - aktivniho hrace
+# - wave + zbyvajici moby
+# - boss + HP
+# - cooldown nejblizsiho hrace
+# - jestli muze vstoupit
+# ============================================================
+info:
+  scale: 1.05
+  background-alpha: 175
+  viewer-radius: 12.0
+
+  rgb:
+    speed-ticks: 4
+    colors:
+      - "#4C1D95"
+      - "#6D28D9"
+      - "#8B5CF6"
+      - "#A78BFA"
+      - "#C4B5FD"
+      - "#67E8F9"
+      - "#22D3EE"
+      - "#A78BFA"
+
+  available: "&a&lVOLNÝ"
+  occupied: "&c&lOBSAZENÝ"
+  disabled: "&7&lVYPNUTÝ"

@@ -1,0 +1,101 @@
+# ============================================================
+# HouskaDungeon - ODMĚNY
+# ============================================================
+#
+# COMMANDY:
+# - spouští se z CONSOLE
+# - NEPIŠ před ně /
+#
+# PLACEHOLDERY:
+# %player% = jméno hráče
+# %arena%  = název arény
+# %wave%   = číslo wave
+#
+# Commandů můžeš přidat kolik chceš.
+# ============================================================
+
+
+waves:
+
+  # =========================
+  # WAVE 1
+  # =========================
+
+  1:
+
+    # Odměna za každého zabitého moba.
+    # 0 = vypnuto
+    money-per-kill: 100
+
+    # Commandy se provedou JEDNOU
+    # po dokončení celé wave.
+    commands:
+      - "eco give %player% 500"
+
+    message: "&aDokončil jsi Wave 1!"
+
+
+  # =========================
+  # WAVE 2
+  # =========================
+
+  2:
+
+    money-per-kill: 150
+
+    commands:
+      - "eco give %player% 750"
+      - "give %player% iron_ingot 3"
+
+    message: "&aDokončil jsi Wave 2!"
+
+
+  # =========================
+  # WAVE 3
+  # =========================
+
+  3:
+
+    money-per-kill: 200
+
+    commands:
+      - "eco give %player% 1000"
+      - "crate key rare give %player% 1"
+
+    message: "&6Dokončil jsi Wave 3!"
+
+
+  # =========================
+  # WAVE 4
+  # =========================
+
+  4:
+
+    money-per-kill: 300
+
+    commands:
+      - "eco give %player% 1500"
+      - "crate key epic give %player% 1"
+      - "give %player% diamond 2"
+
+    message: "&c&lDokončil jsi poslední Wave!"
+
+
+# ============================================================
+# BOSS
+# ============================================================
+
+boss:
+
+  # Pokud nechceš money systém, dej 0.
+  money: 2000
+
+  # Tady může být klidně 1, 5, 20... commandů.
+  # VŠECHNY se provedou po zabití bosse.
+  commands:
+    - "crate key zmrd give %player% 1"
+    - "crate key legendary give %player% 1"
+    - "eco give %player% 5000"
+    - "give %player% diamond 5"
+
+  message: "&5&lBOSS PORAŽEN! &fZískal jsi finální odměny!"

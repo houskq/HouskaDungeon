@@ -1,0 +1,30 @@
+# ============================================================
+# HouskaDungeon - hlavní konfigurace
+# Paper 1.21.11 / Java 21
+# ============================================================
+
+# ------------------------------------------------------------
+# WAVES
+# ------------------------------------------------------------
+# Počet mobů v první wave.
+# Každá další wave dostane +10 mobů.
+#
+# Výchozí:
+# Wave 1 = 10
+# Wave 2 = 20
+# Wave 3 = 30
+# Wave 4 = 40
+# Potom BOSS
+waves:
+  base-mobs: 10
+  add-per-wave: 10
+
+# ------------------------------------------------------------
+# ECONOMY
+# ------------------------------------------------------------
+# Pokud používáš Vault economy, můžeš ho nechat zapnutý.
+# HouskaDungeon ale nebude na Vaultu povinně závislý.
+#
+# Další custom odměny a commandy nastavíme v odmeny.yml.
+economy:
+  enabled: true

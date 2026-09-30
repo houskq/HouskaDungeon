@@ -1,0 +1,28 @@
+name: HouskaDungeon
+version: 2.1.0
+main: cz.houska.dungeon.HouskaDungeon
+api-version: '1.21'
+author: HouskaCze_0
+description: Advanced instanced dungeon system for Paper 1.21.7
+
+softdepend:
+  - Vault
+
+commands:
+  dungeon:
+    description: Hlavní příkaz HouskaDungeon
+    usage: /dungeon
+
+  spawndinfo:
+    description: Vytvoří nebo odstraní informační display dungeon groupy
+    usage: /spawndinfo <group|remove>
+    permission: houskadungeon.admin
+
+permissions:
+  houskadungeon.admin:
+    description: Přístup ke všem administrátorským příkazům HouskaDungeon
+    default: op
+
+  houskadungeon.leave:
+    description: Umožní hráči opustit aktivní dungeon
+    default: true

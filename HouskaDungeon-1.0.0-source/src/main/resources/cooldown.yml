@@ -1,0 +1,29 @@
+# ============================================================
+# HouskaDungeon - COOLDOWNS
+# ============================================================
+#
+# Každá aréna může mít vlastní cooldown.
+#
+# seconds = délka cooldownu v sekundách
+#
+# Příklady:
+# 60   = 1 minuta
+# 300  = 5 minut
+# 1800 = 30 minut
+# 3600 = 1 hodina
+# 7200 = 2 hodiny
+#
+# /dungeon reset <player>
+# smaže hráči cooldowny na všechny dungeon arény.
+# ============================================================
+
+areny:
+
+  Arena1:
+    seconds: 3600
+
+  Arena2:
+    seconds: 3600
+
+  Arena3:
+    seconds: 3600
